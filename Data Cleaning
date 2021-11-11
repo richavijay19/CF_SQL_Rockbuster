@@ -1,0 +1,33 @@
+Finding duplicate records : Here we are going to run queries to check for duplicate records.
+Film Table
+Query :
+SELECT film_id,title,
+release_year,language_id,
+rental_rate,rating,
+replacement_cost,
+count(*)
+FROM film
+GROUP BY film_id,title,
+release_year,language_id,
+rental_rate,rating,
+replacement_cost
+HAVING COUNT(*)>1
+
+
+
+Non-Uniform Data : We can perform the check for inconsistencies in data by using the GROUP
+BY or DISTINCT Keywords
+Film_table
+SELECT * FROM film
+This query returned 1000 rows in the table
+
+Using GROUPBY
+SELECT film_id,title,language_id,rating
+FROM film
+GROUP BY film_id,title,language_id,rating
+This query returned 1000 rows in the table
+Using DISTINCT
+SELECT DISTINCT film_id,title,language_id,rating
+FROM film
+This query returned 1000 distinct rows in the table.
+
